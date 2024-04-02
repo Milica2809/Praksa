@@ -2,20 +2,93 @@ body {
   background-color: rgba(0, 0, 0, 0.9176470588);
 }
 
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 * {
   padding: 0%;
   margin: 0;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+:root {
+  --base: $white;
+  --text: $black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base: $black;
+    --text: $white;
+  }
+}
+html {
+  color-scheme: dark light;
+}
+
+:root:has(#theme [value=dark]:checked) {
+  color-scheme: dark;
+  --base: $black#;
+  --text: $white;
+}
+
+:root:has(#theme [value=light]:checked) {
+  color-scheme: light;
+  --base: $white;
+  --text: $black;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--base);
+}
+
+input,
+.container2 {
+  color: var(--text);
+  background-color: var(--base);
+}
+
+.klasa3 {
+  color: var(--text);
+  background-color: var(--base);
+}
+
+.section4 {
+  color: var(--text);
+  background-color: var(--base);
+}
+
+.section7 {
+  color: var(--text);
+  background-color: var(--base);
+}
+
+.with-scrollbar {
+  height: 300px;
+  border: 5px solid;
+  overflow-y: scroll;
+}
+
 .container {
   margin: 0 auto;
-  width: 1323px;
+}
+
+.Pdf::before {
+  content: url(../slike/pdf.png);
 }
 
 .container2 {
   margin: 0 auto;
   width: 500px;
-  margin-right: 350px;
 }
 
 .nav {
@@ -39,30 +112,52 @@ a {
   margin-left: 40px;
   font-family: Roboto;
   font-size: 22px;
-  line-height: 18, 75px;
 }
 
 #logo {
   position: absolute;
   margin-left: 300px;
   margin-top: -50px;
+  z-index: 2;
 }
 
 .open {
   height: 30px;
-  color: #FFFFFF;
-  background-color: black;
   justify-content: flex-end;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-#slika6 {
-  display: flex;
-  width: 100%;
+.swiper {
   height: 679px;
-  object-fit: cover;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.swiper2 {
+  position: relative;
+}
+
+.swiper2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 414px;
+  width: 429px;
+  background-color: rgba(255, 255, 255, 0.103);
+  overflow: hidden;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .klasa1 {
@@ -72,6 +167,7 @@ a {
   top: 300px;
   background-color: rgba(0, 0, 0, 0.3019607843);
   position: absolute;
+  z-index: 2;
 }
 
 #naslov1 {
@@ -105,7 +201,6 @@ a {
   font-family: Roboto Condensed;
   font-size: 22px;
   flex-direction: column;
-  color: #FFFFFF;
 }
 
 .dugme {
@@ -155,43 +250,38 @@ a {
 #naslov2 {
   font-size: 38px;
   font-family: Roboto Condensed;
-  color: #FFFFFF;
 }
 
 #naslov3 {
   padding-top: 0px;
   font-size: 38px;
   font-family: Roboto Condensed;
-  color: #FFFFFF;
 }
 
 #text2 {
   padding-top: 40px;
   font-family: Roboto Condensed;
   font-size: 22px;
-  color: #FFFFFF;
 }
 
 .klasa4 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  height: 712px;
+  width: 100%;
 }
 
 .klasa5 {
   flex: 1;
   display: flex;
+  justify-content: center;
   font-family: Roboto Condensed;
   font-size: 22px;
   flex-direction: column;
   color: #FFFFFF;
   background-color: #B50014;
   width: 100%;
-  height: 100%;
-  gap: 29px;
   align-items: center;
 }
 
@@ -200,14 +290,7 @@ a {
   font-family: Roboto;
   color: #FFFFFF;
   flex-direction: column;
-  padding-top: 128px;
-}
-
-#naslov5 {
-  font-size: 32px;
-  font-family: Roboto;
-  color: #FFFFFF;
-  flex-direction: column;
+  padding-top: 50px;
 }
 
 #lista {
@@ -216,10 +299,7 @@ a {
   color: #FFFFFF;
   text-align: left;
   flex-direction: column;
-}
-
-.Das {
-  padding-top: 203px;
+  padding-top: 29px;
 }
 
 #dugme3 {
@@ -230,7 +310,17 @@ a {
   color: rgba(0, 0, 0, 0.9176470588);
   border: #FFFFFF;
   border: 1px solid #B50014;
+}
+
+.dugma3 {
+  padding-top: 29px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.Das {
+  padding-top: 203px;
 }
 
 #images {
@@ -238,6 +328,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .klasa6 {
@@ -257,7 +348,6 @@ a {
 
 #naslov6 {
   text-align: center;
-  color: #FFFFFF;
   font-size: 32px;
   font-family: Roboto;
   padding-top: 119px;
@@ -266,7 +356,6 @@ a {
 
 #naslov7 {
   text-align: center;
-  color: #FFFFFF;
   font-size: 22px;
   font-family: Roboto;
   padding-top: 16px;
@@ -274,7 +363,6 @@ a {
 
 #text1 {
   text-align: center;
-  color: #FFFFFF;
   padding-top: 40px;
   font-family: Roboto Condensed;
   font-size: 16px;
@@ -303,6 +391,7 @@ a {
   top: 2742px;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 .klasa8 {
@@ -315,12 +404,12 @@ a {
 .klasa9 {
   display: flex;
   justify-content: center;
-  align-items: center;
   padding-top: 227px;
 }
 
 .zacini2 {
   display: flex;
+  width: 100%;
   height: 705px;
 }
 
@@ -337,35 +426,33 @@ a {
 
 #naslov8 {
   padding-top: 180px;
-  color: #FFFFFF;
   font-size: 32px;
   font-family: Roboto Condensed;
 }
 
 #naslov9 {
   padding-top: 8px;
-  color: #FFFFFF;
   font-size: 22px;
   font-family: Roboto Condensed;
 }
 
 #paragraf {
   padding-top: 33px;
-  color: #FFFFFF;
   font-size: 16px;
   font-family: Roboto;
 }
 
 .klasa10 {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("// Image: 80457d7e9d392ee84954d90d13d15d69@2x");
-  background-size: cover;
+  background-image: url("../slike/18.png ");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+  padding-top: 193px;
+  padding-bottom: 234px;
   width: 100%;
 }
 
@@ -373,7 +460,6 @@ a {
   font-family: Roboto;
   font-size: 32px;
   align-items: center;
-  color: #FFFFFF;
 }
 
 #dugme5 {
@@ -393,8 +479,194 @@ a {
 
 .klasainfo {
   flex-wrap: wrap;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.grupa {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 260px;
+}
+
+#Capture {
+  padding-top: 127px;
+  height: 201px;
+}
+
+.grupa1 {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+#Brath {
+  font-size: 32px;
+  font-family: Roboto;
+  padding-top: 167px;
+}
+
+#dugme6 {
+  border-radius: 30px;
+  background-color: #B50014;
+  width: 174px;
+  height: 47px;
+  color: #FFFFFF;
+  border: #FFFFFF;
+  border: 1px solid;
+}
+
+.Gehen {
+  padding-top: 32px;
+}
+
+.logo3 {
+  padding-top: 117px;
+  justify-content: center;
+  display: flex;
+}
+
+.klasa11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 158px;
+  padding-bottom: 130px;
+  gap: 100px;
+}
+
+.Auszeichnungen {
+  font-family: Roboto;
+  font-size: 32px;
+  align-items: center;
+}
+
+.nagrada1 {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  font-family: Roboto Condensed;
+}
+
+.nagrada2 {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  font-family: Roboto Condensed;
+}
+
+#text5 {
+  text-align: center;
+  padding-top: 14px;
+}
+
+#text6 {
+  text-align: center;
+  padding-top: 14px;
+}
+
+#text7 {
+  text-align: center;
+  padding-top: 14px;
+}
+
+#text8 {
+  padding-top: 14px;
+}
+
+.logo3 {
+  padding-top: 136px;
+  justify-content: center;
+  display: flex;
+}
+
+.Empfehlungs {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-family: Roboto;
+  padding-top: 42px;
+}
+
+.Leute {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  font-family: Roboto;
+  padding-top: 27px;
+}
+
+#dugme7 {
+  border-radius: 30px;
+  background-color: #B50014;
+  width: 174px;
+  height: 47px;
+  color: #FFFFFF;
+  border: #FFFFFF;
+  border: 1px solid;
+}
+
+.dugme7a {
+  padding-top: 520px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.info {
+  display: flex;
+  height: 192px;
+  background-color: #B50014;
+  align-items: center;
+  justify-content: center;
+  margin-top: 76px;
+}
+
+.footer-logo {
+  padding-left: 378px;
+  padding-right: 230px;
+  justify-content: center;
+  align-items: center;
+}
+
+.listainfo li {
+  text-decoration: none;
+  margin: 9px;
+}
+
+.listainfo {
+  font-family: Roboto;
+  font-size: 16px;
+  color: #FFFFFF;
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.listainfo1 {
+  font-family: Roboto;
+  font-size: 16px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 50px;
+}
+
+.kraj {
+  display: flex;
+  background-color: #66000B;
+  align-items: center;
+  justify-content: center;
+  gap: 853px;
+  font-family: Roboto;
+  font-size: 12px;
+  color: #FFFFFF;
 }
